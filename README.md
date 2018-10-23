@@ -1,1 +1,1 @@
-# BufferStockTheory is the make repo for the paper BufferStockTheory
+# BufferStockTheory is the Latest repo for the paper BufferStockTheory
