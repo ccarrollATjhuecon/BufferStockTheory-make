@@ -14,7 +14,7 @@ scriptDir="$(dirname "$0")"
 cd $scriptDir/../BufferStockTheory-Latest
 
 rm economics.bib # This should be obtained via kpsewhich from the system config
-for jobName in BufferStockTheory BufferStockTheory-Slides; do
+for jobName in BufferStockTheory Slides/BufferStockTheory-Slides; do
     rm -f $jobName.bib
     rm -f $jobName-Add.bib
     touch $jobName.bib 
