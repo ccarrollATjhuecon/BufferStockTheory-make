@@ -4,7 +4,7 @@ scriptDir="$(dirname "$0")" # scriptDir=/Volumes/Data/Papers/BufferStockTheory
 
 journal=TheOnion
 
-cd $scriptDir/../BufferStockTheory-Latest/Private/$journal
+cd $scriptDir/../BufferStockTheory-Shared/Private/$journal
 
 pdflatex --shell-escape "\newcommand\UseOption{FromShell}\input{Submit.tex}"
 bibtex   Submit

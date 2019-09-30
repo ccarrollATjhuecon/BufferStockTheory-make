@@ -9,7 +9,7 @@
 # to the Johns Hopkins University department of Economics Mathematica license
 
 scriptDir="$(dirname "$0")" # scriptDir=/Volumes/Data/Papers/BufferStockTheory
-cd $scriptDir/BufferStockTheory-Latest
+cd $scriptDir/BufferStockTheory-Shared
 
 rm -Rf Figures
 mkdir  Figures
@@ -44,6 +44,6 @@ else # must be a generic Unix machine
     fi
 fi
 
-cd $scriptDir/BufferStockTheory-Latest/Code/Python
+cd $scriptDir/BufferStockTheory-Shared/Code/Python
 
 ipython ./BufferStockTheory.py

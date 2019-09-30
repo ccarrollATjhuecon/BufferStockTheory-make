@@ -1,5 +1,5 @@
 #!/bin/sh
-# This script assumes that the contents of the paper's repo are in a subdirectory (named "Latest")
+# This script assumes that the contents of the paper's repo are in a subdirectory (named "Shared")
 # of the directory the script is in
 
 # if [ $# -ne 1 ]; then
@@ -11,7 +11,7 @@
 # jobName=$1
 
 scriptDir="$(dirname "$0")"
-cd $scriptDir/../BufferStockTheory-Latest
+cd $scriptDir/../BufferStockTheory-Shared
 
 rm economics.bib # This should be obtained via kpsewhich from the system config
 for jobName in BufferStockTheory Slides/BufferStockTheory-Slides; do

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 scriptDir="$(dirname "$0")"
-cd $scriptDir/../BufferStockTheory-Latest
+cd $scriptDir/../BufferStockTheory-Shared
 
 git fetch
 git status
 
 echo '' ; echo ''
-echo 'To post your changes, from a shell in the BufferStockTheory-Latest directory, please do:'
+echo 'To post your changes, from a shell in the BufferStockTheory-Shared directory, please do:'
 echo ''
 echo 'git add .'
 echo 'git commit -m [commit message]'

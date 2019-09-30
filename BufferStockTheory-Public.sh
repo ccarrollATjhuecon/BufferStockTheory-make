@@ -38,9 +38,9 @@ fi
 cd $scriptDir
 
 if [ "$option" == "create" ]; then
-    rsync -L -azh -vv --delete-before --delete-excluded --inplace  --exclude-from=$scriptDir/BufferStockTheory-Public-Excludes-To-Delete.txt --force $root/$nameRoot-Latest/ $pathToRepos/$name-Public
+    rsync -L -azh -vv --delete-before --delete-excluded --inplace  --exclude-from=$scriptDir/BufferStockTheory-Public-Excludes-To-Delete.txt --force $root/$nameRoot-Shared/ $pathToRepos/$name-Public
 else
-    rsync -L -azh -vv --delete-before                   --inplace  --exclude-from=$scriptDir/BufferStockTheory-Public-Excludes-To-Ignore.txt --force $root/$nameRoot-Latest/ $pathToRepos/$name-Public
+    rsync -L -azh -vv --delete-before                   --inplace  --exclude-from=$scriptDir/BufferStockTheory-Public-Excludes-To-Ignore.txt --force $root/$nameRoot-Shared/ $pathToRepos/$name-Public
 fi
 
 cd $pathToRepos/$name-Public
@@ -78,10 +78,10 @@ if [ "$option" == "create" ]; then
     echo "# "$name" is the public repo for the paper "$name  > README.md
     git init
     git add --all
-    git commit -m "First version of "$name" constructed from "$pathToRepos-Latest
+    git commit -m "First version of "$name" constructed from "$pathToRepos-Shared
     git remote add origin https://github.com/$username/$name-Public.git
     git push -u origin master
 
-    # git submodule add https://github.com/llorracc/BufferStockTheory Latest
+    # git submodule add https://github.com/llorracc/BufferStockTheory Shared
 
 fi
