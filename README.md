@@ -1,1 +1,1 @@
-# BufferStockTheory is the Shared repo for the paper BufferStockTheory
+#  is the public repo for the paper 

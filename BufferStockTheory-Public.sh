@@ -4,7 +4,7 @@
 
 if [ $# -ne 3 ]; then
     echo "usage:   ${0##*/} <path> <GitHubID> create|update "
-    echo "example: ${0##*/} /Volumes/Data/GitHub/ccarrollATjhuecon ccarrollATjhuecon create"
+    echo "example: ${0##*/} ~/GitHub/ccarrollATjhuecon ccarrollATjhuecon create"
     exit 1
 fi
 
