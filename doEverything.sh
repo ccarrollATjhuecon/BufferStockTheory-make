@@ -8,6 +8,7 @@ cd $scriptDir
 
 ./makeEverything.sh
 ./postEverything.sh
+./makePDF-Local.sh
 
 # The makeEverything code leaves the LaTeX directory in its "Portable" rather than "Local" state
 # Fix that
