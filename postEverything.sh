@@ -17,4 +17,20 @@ echo ''
 echo 'Hit return when done, C-c to abort'
 read answer
 
+cd $scriptDir/../BufferStockTheory-Public
+
+git fetch
+git status
+
+echo '' ; echo ''
+echo 'To post your changes, from a shell in the BufferStockTheory-Public directory, please do:'
+echo ''
+echo 'git add .'
+echo 'git commit -m [commit message]'
+echo 'git push'
+echo ''
+echo ''
+echo 'Hit return when done, C-c to abort'
+read answer
+
 

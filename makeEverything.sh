@@ -4,8 +4,7 @@
 
 cd "$(dirname "$0")" # http://stackoverflow.com/questions/3349105/how-to-set-current-working-directory-to-the-directory-of-the-script
 
-#./makeFiguresMathematica.sh
 ./makeFiguresHARK.sh
 ./makeJournalStuff.sh
 ./makePDF-Shareable.sh
-
+./makePublic.sh ~/Papers/BufferStockTheory update

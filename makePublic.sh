@@ -2,15 +2,14 @@
 
 # Construct [name]-Public from repo
 
-if [ $# -ne 3 ]; then
-    echo "usage:   ${0##*/} <rootpath> <GitHubID> create|update "
-    echo "example: ${0##*/} ~/Papers/BufferStockTheory ccarrollATjhuecon update"
+if [ $# -ne 2 ]; then
+    echo "usage:   ${0##*/} <rootpath> create|update "
+    echo "example: ${0##*/} ~/Papers/BufferStockTheory update"
     exit 1
 fi
 
 pathLocal=`realpath $1`
-GitHubID=$2
-option=$3
+option=$2
 
 scriptDir="$(realpath $(dirname "$0"))" # get the path to this script itself
 
