@@ -8,14 +8,4 @@ cd $scriptDir
 
 ./makeEverything.sh
 ./postEverything.sh
-./makePDF-Local.sh
-
-# The makeEverything code leaves the LaTeX directory in its "Portable" rather than "Local" state
-# Fix that
-
-rm -f economics.bib
-for f in BufferStockTheory BufferStockTheory-Slides; do
-    rm    $f.bib
-    touch $f.bib
-done
-
+./makePDF-Local.sh # Fixes the fact that the makeEverything code leaves the LaTeX directory in its "Portable" rather than "Local" state

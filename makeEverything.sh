@@ -7,5 +7,5 @@ cd "$(dirname "$0")" # http://stackoverflow.com/questions/3349105/how-to-set-cur
 #./makeFiguresMathematica.sh
 ./makeFiguresHARK.sh
 ./makeJournalStuff.sh
-./makePDF-Portable.sh
+./makePDF-Shareable.sh
 
