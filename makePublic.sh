@@ -4,7 +4,7 @@
 
 if [ $# -ne 2 ]; then
     echo "usage:   ${0##*/} <rootpath> create|update "
-    echo "example: ${0##*/} ~/Papers/BufferStockTheory update"
+    echo "example: ${0##*/} ~/Papers/BufferStockTheory-Shared update"
     exit 1
 fi
 
@@ -30,9 +30,9 @@ fi
 
 if [ "$option" == "create" ]; then # create a new directory 
     mkdir -p $pathLocal/$nameRoot-Public # make sure the target exists
-    rsync -azhv --delete-excluded --inplace  --exclude="*.git" --force $scriptRoot/$nameRoot-Shared/ $pathLocal/$nameRoot-Public
+    rsync -azhv --delete-excluded --inplace  --exclude="*.git" --exclude="Private" --force $scriptRoot/$nameRoot-Shared/ $pathLocal/$nameRoot-Public
 else # refresh an existing directory
-    rsync -azhv                   --inplace  --exclude="*.git" --force $scriptRoot/$nameRoot-Shared/ $pathLocal/$nameRoot-Public
+    rsync -azhv                   --inplace  --exclude="*.git" --exclude="Private" --force $scriptRoot/$nameRoot-Shared/ $pathLocal/$nameRoot-Public
 fi
 
 # strip everything between begin{Private} and end{Private}, remove all lines labeled PrivateMsg, and remove all comments

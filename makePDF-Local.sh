@@ -1,12 +1,20 @@
 #!/bin/bash
 
-scripts=/Methods/Tools/Scripts
+scriptDir="$(realpath $(dirname "$0"))" # Parent directory, e.g. BufferStockTheory-make
+# scriptDir=~/Papers/BST/BST-make
+baseName=$(basename $(dirname "$scriptDir")) # Name of grandparent directory, e.g. BufferStockTheory
 
-#cmd="$scripts/makePDF-Local.sh `realpath ../BufferStockTheory-Shared` BufferStockTheory"
-#echo "$cmd"
-# eval "$cmd"
+SharedDir="$(realpath "$scriptDir/../$baseName-Shared")" # e.g., BufferStockTheory-Shared
 
-cmd="$scripts/makePDF-Local.sh `realpath ../BufferStockTheory-Shared/Slides` BufferStockTheory-Slides"
+toolsDir=/Methods/Tools/Scripts # Extra tools
+
+cd "$scriptDir"
+
+cmd="$toolsDir/makePDF-Local.sh `realpath ../$baseName-Shared` BufferStockTheory"
+echo "$cmd"
+eval "$cmd"
+
+cmd="$toolsDir/makePDF-Local.sh `realpath ../$baseName-Shared/Slides` BufferStockTheory-Slides"
 echo "$cmd"
 eval "$cmd"
 
