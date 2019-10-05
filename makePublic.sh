@@ -13,7 +13,7 @@ option=$2
 
 scriptDir="$(realpath $(dirname "$0"))" # get the path to this script itself
 
-# scriptDir=~/Papers/BufferStockTheory/BufferStockTheory-make ; option=create ; pathLocal=~/Papers/BufferStockTheory
+# scriptDir=~/Papers/BST/BST-make ; option=create ; pathLocal=~/Papers/BST
 scriptRoot="$(realpath "$scriptDir"/..)" # Assume the scriptRoot is one level up
 nameRoot="$(basename  "$scriptRoot")" # Assume the base name of the project is the name of the root directory
 
@@ -40,8 +40,8 @@ cd $pathLocal/$nameRoot-Public
 for f in $(find . -name '*.tex')
 do
     sed '/begin{Private}/,/end{Private}/d' $f > $f-tmp # Delete everything in a {Private} environment 
-    grep -v PrivateMsg $f-tmp > $f-tmp2                # Delete all lines marked as PrivateMsg
-    sed '/%%/d' $f-tmp2 > $f                           # Remove all comments
+    grep -v '%Msg' $f-tmp > $f-tmp2                # Delete all lines marked as %Msg
+    sed '/%%/d' $f-tmp2 > $f                           # Remove all comments beginning with %%
     rm $f-tmp $f-tmp2                                  # Clean up
 done
 
