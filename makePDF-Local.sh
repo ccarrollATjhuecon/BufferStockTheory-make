@@ -1,14 +1,21 @@
 #!/bin/bash
 
-# The makeEverything code leaves the LaTeX directory in its "Portable" rather than "Local" state
-# Fix that
+scriptDir="$(realpath $(dirname "$0"))" # Parent directory, e.g. BufferStockTheory-make
+# scriptDir=~/Papers/BST/BST-make
+baseName=$(basename $(dirname "$scriptDir")) # Name of grandparent directory, e.g. BufferStockTheory
 
-scriptDir="$(realpath $(dirname "$0"))" # get the path to this script itself
+SharedDir="$(realpath "$scriptDir/../$baseName-Shared")" # e.g., BufferStockTheory-Shared
 
-cd "$scriptDir/../BufferStockTheory-Public"
+toolsDir=/Methods/Tools/Scripts # Extra tools
 
-rm -f economics.bib
-for f in BufferStockTheory BufferStockTheory-Slides; do
-    rm    $f.bib
-    touch $f.bib
-done
+cd "$scriptDir"
+
+cmd="$toolsDir/makePDF-Local.sh `realpath ../$baseName-Shared` BufferStockTheory"
+echo "$cmd"
+eval "$cmd"
+
+cmd="$toolsDir/makePDF-Local.sh `realpath ../$baseName-Shared/Slides` BufferStockTheory-Slides"
+echo "$cmd"
+eval "$cmd"
+
+

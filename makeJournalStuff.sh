@@ -1,14 +1,23 @@
 #!/bin/bash
 
-scriptDir="$(dirname "$0")" # scriptDir=/Volumes/Data/Papers/BufferStockTheory
+
+scriptDir="$(realpath $(dirname "$0"))" # Parent directory, e.g. BufferStockTheory-make
+# scriptDir=~/Papers/BST/BST-make
+baseName=$(basename $(dirname "$scriptDir")) # Name of grandparent directory, e.g. BufferStockTheory
+
+SharedDir="$(realpath "$scriptDir/../$baseName-Shared")" # e.g., BufferStockTheory-Shared
+
+toolsDir=/Methods/Tools/Scripts # Extra tools
 
 journal=TheOnion
+letter=Submit
 
-cd $scriptDir/../BufferStockTheory-Shared/Private/$journal
+cd $scriptDir/../$baseName-Shared/Private/$journal
 
-pdflatex --shell-escape "\newcommand\UseOption{FromShell}\input{Submit.tex}"
-bibtex   Submit
-pdflatex --shell-escape "\newcommand\UseOption{FromShell}\input{Submit.tex}"
-pdflatex --shell-escape "\newcommand\UseOption{FromShell}\input{Submit.tex}"
-pdflatex --shell-escape "\newcommand\UseOption{FromShell}\input{Submit.tex}"
+
+pdflatex "$letter"
+bibtex   "$letter"
+pdflatex "$letter"
+pdflatex "$letter"
+pdflatex "$letter"
 
