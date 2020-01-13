@@ -3,11 +3,10 @@
 # and finally (optionally) updates the GitHub version
 
 scriptDir="$(realpath $(dirname "$0"))" # Parent directory, e.g. BufferStockTheory-make 
-baseName=$(basename $(dirname "$scriptDir")) # Name of grandparent directory, e.g. BufferStockTheory
 
-SharedDir="$(realpath "$scriptDir/../$baseName-Shared")" # e.g., BufferStockTheory-Shared
+baseName=$(basename $(dirname "$scriptDir")) # Name of grandparent directory, e.g. BufferStockTheory or BST
 
-toolsDir=/Methods/Tools/Scripts # Extra tools
+SharedDir="$(realpath "$scriptDir/../$baseName-Shared")" # e.g., BST-Shared
 
 cd "$scriptDir"
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-# Submission letter, description of revisions, etc
 
 scriptDir="$(realpath $(dirname "$0"))" # Parent directory, e.g. BufferStockTheory-make
 # scriptDir=~/Papers/BST/BST-make
@@ -7,14 +6,16 @@ baseName=$(basename $(dirname "$scriptDir")) # Name of grandparent directory, e.
 
 SharedDir="$(realpath "$scriptDir/../$baseName-Shared")" # e.g., BufferStockTheory-Shared
 
-journal=TheOnion
-letter=Submit
+toolsDir=. # Extra tools
 
-cd $scriptDir/../$baseName-Shared/Private/$journal
+cd "$scriptDir"
 
-pdflatex "$letter"
-bibtex   "$letter"
-pdflatex "$letter"
-pdflatex "$letter"
-pdflatex "$letter"
+cmd="$toolsDir/makePDF-Local.sh `realpath ../$baseName-Shared` BufferStockTheory"
+echo "$cmd"
+eval "$cmd"
+
+cmd="$toolsDir/makePDF-Local.sh `realpath ../$baseName-Shared/Slides` BufferStockTheory-Slides"
+echo "$cmd"
+eval "$cmd"
+
 

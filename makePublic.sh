@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# The "Public" version strips out comments beginning with %% or %Msg and the content of {Private} environments
+# and does not copy any directories or files named "Private"
 # Construct [name]-Public from repo
 
 if [ $# -ne 2 ]; then

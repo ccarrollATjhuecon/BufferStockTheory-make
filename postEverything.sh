@@ -1,4 +1,6 @@
 #!/bin/bash
+# Post resulting changes to GitHub
+
 scriptDir="$(realpath $(dirname "$0"))" # Parent directory, e.g. BufferStockTheory-make 
 baseName=$(basename $(dirname "$scriptDir")) # Name of grandparent directory, e.g. BufferStockTheory
 
